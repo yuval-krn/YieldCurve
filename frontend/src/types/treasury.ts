@@ -10,7 +10,6 @@ export type ChartPoint = {
 
 export type OrderData = {
   term: string;
-  yield: number;
   quantity: number;
 };
 

@@ -48,8 +48,75 @@ h1 {
     padding: 2rem;
     border-radius: 8px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    max-width: 400px;
+    max-width: 500px;
     width: 90%;
+}
+
+/* Error notification styles */
+.error-notification {
+    background-color: #fee;
+    border: 1px solid #fcc;
+    border-radius: 4px;
+    padding: 1rem;
+    margin: 1rem 0;
+    color: #d00;
+}
+
+.error-notification p {
+    margin: 0 0 0.5rem 0;
+}
+
+.dismiss-error {
+    background: #d00;
+    color: white;
+    border: none;
+    padding: 0.25rem 0.5rem;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+.dismiss-error:hover {
+    background: #b00;
+}
+
+/* Order history error container */
+.order-history-error h2 {
+    margin-bottom: 1rem;
+}
+
+/* Disabled button styles */
+.form-button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.form-button:disabled:hover {
+    background-color: inherit;
+    transform: none;
+}
+
+/* Yield notice styling */
+.yield-notice {
+    font-size: 0.9rem;
+    color: #666;
+    font-style: italic;
+    margin-top: 0.5rem;
+    padding: 0.5rem;
+    background-color: #f8f9fa;
+    border-left: 3px solid #28a745;
+    border-radius: 4px;
+}
+
+/* Order submission error in modal */
+.order-submission-error {
+    background-color: #fee;
+    border: 1px solid #fcc;
+    border-radius: 4px;
+    padding: 0.75rem;
+    margin: 1rem 0rem;
+    color: #d00;
+    font-size: 0.9rem;
 }
 
 .order-form h2 {

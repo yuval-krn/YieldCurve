@@ -5,12 +5,16 @@ type OrderSubmissionFormProps = {
   selectedPoint: ChartPoint;
   onSubmit: (order: OrderData) => void;
   onCancel: () => void;
+  isSubmitting?: boolean;
+  error?: string | null;
 };
 
 export default function OrderSubmissionForm({
   selectedPoint,
   onSubmit,
   onCancel,
+  isSubmitting = false,
+  error,
 }: OrderSubmissionFormProps) {
   const [amount, setAmount] = useState<string>("1,000");
   const [amountError, setAmountError] = useState<string>("");
@@ -38,7 +42,6 @@ export default function OrderSubmissionForm({
 
     onSubmit({
       term: selectedPoint.term,
-      yield: selectedPoint.Yield,
       quantity: numAmount,
     });
     setAmount("1,000"); // Reset amount after submission
@@ -69,7 +72,10 @@ export default function OrderSubmissionForm({
         <div className="order-form-details">
           <p>
             <strong>Term:</strong> {selectedPoint.term} <br />
-            <strong>Yield:</strong> {selectedPoint.Yield}%
+            <strong>Current Yield:</strong> {selectedPoint.Yield}%
+          </p>
+          <p className="yield-notice">
+            Your order will be filled at the current market yield shown above.
           </p>
         </div>
         <div className="quantity-field">
@@ -86,12 +92,23 @@ export default function OrderSubmissionForm({
           </div>
           {amountError && <div className="error-message">{amountError}</div>}
         </div>
+        {error && (
+          <div className="error-message order-submission-error">{error}</div>
+        )}
         <div className="form-buttons">
-          <button className="form-button cancel-button" onClick={handleCancel}>
+          <button
+            className="form-button cancel-button"
+            onClick={handleCancel}
+            disabled={isSubmitting}
+          >
             Cancel
           </button>
-          <button className="form-button submit-button" onClick={handleSubmit}>
-            Submit Order
+          <button
+            className="form-button submit-button"
+            onClick={handleSubmit}
+            disabled={isSubmitting}
+          >
+            {isSubmitting ? "Submitting..." : "Submit Order"}
           </button>
         </div>
       </div>

@@ -1,0 +1,274 @@
+/* Global styles for the Treasury App */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #f2f2f2;
+    font-family:
+        -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+        "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+        sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    line-height: 1.6;
+    color: #333;
+}
+
+#root {
+    min-height: 100vh;
+    padding: 20px;
+}
+
+h1 {
+    color: #2c3e50;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+/* Order Submission Form Styles */
+.order-form-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.order-form {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    max-width: 400px;
+    width: 90%;
+}
+
+.order-form h2 {
+    margin: 0 0 1.5rem 0;
+    color: #2c3e50;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.order-form-details {
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    background-color: #f8f9fa;
+    border-radius: 4px;
+}
+
+.order-form-details p {
+    margin: 0;
+    line-height: 1.4;
+}
+
+.quantity-field {
+    margin-bottom: 2rem;
+}
+
+.quantity-field label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: #2c3e50;
+}
+
+.quantity-field input {
+    width: 100%;
+    padding: 0.75rem;
+    border: 2px solid #e1e5e9;
+    border-radius: 4px;
+    font-size: 1rem;
+    transition: border-color 0.2s;
+}
+
+.quantity-field input:invalid {
+    border-color: #e74c3c;
+}
+
+.quantity-field .input-with-dollar {
+    position: relative;
+}
+
+.quantity-field .dollar-sign {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #666;
+    pointer-events: none;
+}
+
+.quantity-field .dollar-input {
+    padding-left: 24px;
+}
+
+.quantity-field .error-message {
+    color: #e74c3c;
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+}
+
+.quantity-field input:focus {
+    outline: none;
+    border-color: #3498db;
+}
+
+.form-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: flex-end;
+}
+
+.form-button {
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition:
+        background-color 0.2s,
+        transform 0.1s;
+}
+
+.form-button:hover {
+    transform: translateY(-1px);
+}
+
+.form-button:active {
+    transform: translateY(0);
+}
+
+.submit-button {
+    background-color: #27ae60;
+    color: white;
+}
+
+.submit-button:hover {
+    background-color: #229954;
+}
+
+.cancel-button {
+    background-color: #95a5a6;
+    color: white;
+}
+
+.cancel-button:hover {
+    background-color: #7f8c8d;
+}
+
+/* Order History Styles */
+.order-history {
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.order-history h2 {
+    color: #2c3e50;
+    margin-bottom: 2rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.order-history-list {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.order-card {
+    background: #f8f9fa;
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.2s ease;
+}
+
+.order-card:hover {
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
+.order-card-header {
+    display: flex;
+    justify-content: between;
+    align-items: flex-start;
+    margin-bottom: 1.5rem;
+}
+
+.order-card-title {
+    color: #2c3e50;
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin: 0;
+}
+
+.order-card-prominent {
+    display: flex;
+    gap: 3rem;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.prominent-stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.prominent-stat-label {
+    font-size: 0.875rem;
+    color: #666;
+    font-weight: 500;
+    margin-bottom: 0.25rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.prominent-stat-value {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #2c3e50;
+}
+
+.yield-value {
+    color: #27ae60;
+}
+
+.amount-value {
+    color: #3498db;
+}
+
+.order-card-details {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid #e1e5e9;
+}
+
+.detail-item {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #555;
+}
+
+.detail-item strong {
+    color: #2c3e50;
+    font-weight: 600;
+}
